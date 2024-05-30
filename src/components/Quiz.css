@@ -1,0 +1,10 @@
+.sign-card {
+    padding: 5em;
+    margin: 5em auto;
+    border: floralwhite solid 0.5em;
+    border-radius: 2em;
+}
+
+.button:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
