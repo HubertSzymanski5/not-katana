@@ -1,4 +1,4 @@
 export interface JapaneseSymbol {
-  name: string,
-  answer: string
+  symbol: string,
+  reading: string
 }

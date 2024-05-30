@@ -1,8 +1,25 @@
 .sign-card {
-    padding: 5em;
-    margin: 5em auto;
+    padding: 2em;
+    margin: 2em auto;
     border: floralwhite solid 0.5em;
     border-radius: 2em;
+}
+
+#answer-input {
+    padding: 1em;
+    margin: 2em 0.5em;
+    border: floralwhite solid 0.5em;
+    border-radius: 2em;
+    font-size: 100%;
+    outline: none;
+}
+
+.button {
+    padding: 1em;
+    margin: 2em 0.5em;
+    border: floralwhite solid 0.5em;
+    border-radius: 2em;
+    font-size: 100%;
 }
 
 .button:hover {
