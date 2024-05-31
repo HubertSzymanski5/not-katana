@@ -1,0 +1,12 @@
+
+.modal {
+    font-size: 2em;
+    border: rgba(165, 0, 0, 0.75) solid 0.5em;
+    border-radius: 0.5em;
+    outline: none;
+}
+
+.modal::backdrop {
+    /*background: hsla(0, 100%, 10%, 0.75);*/
+    background: hsla(0, 0%, 10%, 0.75);
+}

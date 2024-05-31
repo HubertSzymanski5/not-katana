@@ -1,15 +1,19 @@
 import Quiz from "./Quiz.tsx";
-import {JapaneseSymbol} from "../model/JapaneseSymbol.ts";
+import {JapaneseSymbol} from "../../model/JapaneseSymbol.ts";
 import {useState} from "react";
-import SymbolsService, {SymbolLevels, SymbolTypes} from "../services/SymbolsService.ts";
+import SymbolsService, {SymbolLevels, SymbolTypes} from "../../services/SymbolsService.ts";
 
-export default function QuizController(props: {symbolsService: SymbolsService}) {
+interface Props {
+  symbolsService: SymbolsService
+}
+
+export default function QuizController({symbolsService}: Props) {
   const [queuedSymbols, setQueuedSymbols] = useState(loadSymbols);
   const [currentSymbol, setCurrentSymbol] = useState(randomSymbol(queuedSymbols));
   const [finished, setFinished] = useState(false);
 
   function loadSymbols(): JapaneseSymbol[] {
-    return props.symbolsService.loadSymbols([SymbolTypes.KATAKANA], [SymbolLevels.EXTENDED]).slice(0, 2);
+    return symbolsService.loadSymbols([SymbolTypes.KATAKANA], [SymbolLevels.BASIC]).slice(0, 5);
   }
 
   function handleCorrectAnswer(symbol: JapaneseSymbol) {
@@ -23,7 +27,6 @@ export default function QuizController(props: {symbolsService: SymbolsService}) 
   }
 
   function handleWrongAnswer() {
-    alert(`${currentSymbol.symbol} is ${currentSymbol.reading}`);
     setCurrentSymbol(randomSymbol(queuedSymbols));
   }
 
@@ -41,7 +44,7 @@ export default function QuizController(props: {symbolsService: SymbolsService}) 
     </>
   ) : ( // TODO: it should display results
     <>
-      <button className="button" onClick={restart}>RESTART</button>
+      <button className="button" onClick={restart}>START</button>
     </>
   )
 }

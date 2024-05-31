@@ -1,5 +1,5 @@
 import './App.css'
-import QuizController from "./components/QuizController.tsx";
+import QuizController from "./components/quiz/QuizController.tsx";
 import SymbolsService from "./services/SymbolsService.ts";
 
 function App() {
